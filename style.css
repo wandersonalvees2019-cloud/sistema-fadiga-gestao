@@ -3,3 +3,79 @@
 @media(max-width:900px){#app{grid-template-columns:1fr}aside{position:relative}.asideFoot{display:none}.logo{padding-bottom:8px}.nav{display:inline-block}.headerRight{flex-direction:column;align-items:flex-end;gap:4px}.kpis{grid-template-columns:1fr 1fr}.grid,.grid.three,.grid.management{grid-template-columns:1fr}.grid.three .card:last-child{grid-column:auto}.filters{flex-wrap:wrap}.filters label{flex:1 1 180px}.content{padding:16px}.titleRow{display:block}.titleRow>div:last-child{margin-bottom:14px}.topAction{margin:5px 5px 5px 0}.turnosGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){main header{padding:12px 16px}.headerRight #lastUpdate{display:none}.kpis{grid-template-columns:1fr}.turnosGrid{grid-template-columns:1fr}.miniStats{grid-template-columns:1fr}.trendBars{overflow-x:auto}.filters label{flex-basis:100%}}
 @media print{aside,header,.filters,.topAction,.modalActions,#fechar{display:none!important}#app{display:block!important}.content{max-width:none;padding:0}.page{display:none!important}.page.active{display:block!important}.modal{position:static;background:#fff;padding:0;display:block!important}.modal.hidden{display:none!important}.modalbox{width:100%;max-height:none;overflow:visible;padding:0}.item,.card,.kpis>div{break-inside:avoid}.content{background:#fff}}
+
+/* ===== V2.1 - RESPONSIVIDADE AUTOMATICA ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:0;overflow-x:hidden}
+main{min-width:0;width:100%}
+.content{width:100%;margin:0 auto;padding:clamp(14px,2vw,28px)}
+.titleRow{flex-wrap:wrap}
+.titleRow>div:first-child{min-width:0;flex:1 1 560px}
+.titleRow>div:last-child{flex:0 0 auto}
+h1{font-size:clamp(24px,2.2vw,32px)}
+.pageHelp{font-size:clamp(13px,1.05vw,16px);line-height:1.35}
+.kpis>div,.card,.item{min-width:0}
+.kpis strong{font-size:clamp(27px,2.3vw,34px)}
+.filters{display:grid;grid-template-columns:repeat(4,minmax(135px,1fr)) auto;gap:10px}
+.filters label{min-width:0}
+.filters button{align-self:end}
+
+/* Telas grandes e notebooks: a grade se adapta antes de apertar os cards. */
+@media (max-width:1500px){
+  #app{grid-template-columns:210px minmax(0,1fr)}
+  .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid.three{grid-template-columns:1fr 1fr}
+  .grid.three .card:last-child{grid-column:1/-1}
+}
+@media (max-width:1180px){
+  #app{grid-template-columns:190px minmax(0,1fr)}
+  .logo{font-size:19px}.logo img{width:48px;height:48px}
+  main header{padding:12px 20px}
+  .grid,.grid.management,.grid.three{grid-template-columns:1fr}
+  .grid.three .card:last-child{grid-column:auto}
+  .filters{grid-template-columns:repeat(2,minmax(160px,1fr))}
+  .filters button{width:100%}
+}
+
+/* Tablet/celular: menu vira barra superior e o conteudo usa 100% da tela. */
+@media (max-width:900px){
+  #app{display:block;min-height:100vh}
+  aside{position:relative;width:100%;padding:10px 12px;display:grid;grid-template-columns:auto 1fr;gap:8px 10px;align-items:center}
+  .logo{grid-column:1/-1;margin:0;padding:0 4px 8px;border-bottom:2px solid #ff6900}
+  .logo img{width:42px;height:42px}
+  aside .nav{display:block;width:100%;padding:12px 10px;text-align:center}
+  .asideFoot{display:none}
+  main header{min-height:62px;padding:10px 14px;gap:10px;flex-wrap:wrap}
+  main header>div:first-child{min-width:180px;flex:1}
+  .headerRight{margin-left:auto;flex-direction:column;align-items:flex-end;gap:3px}
+  #userBadge{padding:8px 12px;font-size:13px}
+  .content{padding:14px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .filters{grid-template-columns:repeat(2,minmax(0,1fr));padding:13px}
+  .turnosGrid{grid-template-columns:1fr 1fr}
+  .modalbox{padding:20px}
+}
+@media (max-width:600px){
+  aside{grid-template-columns:1fr 1fr}
+  main header>div:first-child small{font-size:11px}
+  #lastUpdate{display:none}
+  .titleRow>div:last-child{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .topAction{margin:0;width:100%;padding:11px 8px}
+  .filters{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+  .grid,.grid.three,.grid.management{grid-template-columns:1fr}
+  .turnosGrid,.scienceRows,.miniStats{grid-template-columns:1fr}
+  .barrow{grid-template-columns:82px minmax(0,1fr) 30px;gap:7px}
+  .card{padding:15px}
+  .cardTitleRow{align-items:flex-start}
+  .trendBars{overflow-x:auto;min-width:0}
+  .modal{padding:8px}.modalbox{width:100%;max-height:96vh;padding:18px 14px}
+  .modalActions{flex-direction:column}.modalActions button{width:100%}
+}
+@media (max-width:380px){
+  aside{grid-template-columns:1fr}
+  .logo{grid-column:1}
+  .titleRow>div:last-child{grid-template-columns:1fr}
+  main header{align-items:flex-start}
+  .headerRight{width:100%;align-items:flex-start;margin-left:0}
+}

@@ -19,3 +19,11 @@ Principais melhorias:
 
 PUBLICAÇÃO NO GITHUB PAGES:
 Substitua os arquivos do repositório sistema-fadiga-gestao pelos arquivos deste pacote e faça Commit changes.
+
+ATUALIZACAO V2.1 - RESPONSIVIDADE AUTOMATICA
+- Layout fluido para computador, notebook, tablet e celular.
+- KPIs reorganizados automaticamente conforme a largura da tela.
+- Filtros passam de 4 colunas para 2 e depois 1 coluna.
+- Menu lateral se transforma em barra superior em tablet/celular.
+- Cards, graficos, botoes e modal se ajustam sem rolagem horizontal da pagina.
+- Mantida a mesma integracao Firebase e todas as funcoes da V2.0.
