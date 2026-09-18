@@ -1,13 +1,28 @@
-PAINEL DA GESTÃO - SETOR DE FADIGA
+SISTEMA DE FADIGA — VERSÃO FINAL OPERADORES
 
-Arquivos prontos para GitHub Pages.
-Usa o mesmo Firebase do App Operadores.
+Arquivos para substituir no GitHub:
+- index.html
+- style.css
+- app.js
 
-Publicação:
-1. Crie um novo repositório: sistema-fadiga-gestao
-2. Envie index.html, style.css, app.js e LEIA-ME.txt
-3. Settings > Pages > Deploy from a branch > main > /(root)
-4. Firebase Authentication > Configurações > Domínios autorizados: o domínio github.io já autorizado atende este projeto.
+LOGIN ÚNICO:
+Use o mesmo usuário/senha já criado no Firebase Authentication.
+Após entrar, o colaborador é selecionado no formulário:
+Daniele = A
+Carina = B
+Natiély = C
+Wanderson = D
 
-Acesso:
-O usuário autenticado precisa ter perfil 'gestor' ou 'administrador' e ativo=true em usuarios/{uid}.
+O sistema grava todos os relatórios usando o UID do login único, mas registra
+responsavelNome e turno conforme o colaborador selecionado.
+
+Funções desta versão:
+- Novo Relatório
+- Botões Normal / Atenção / Ocorrência com seleção visual real
+- Meus Relatórios em tempo real
+- Filtros por data, turno, colaborador, situação e pesquisa textual
+- Visualização completa do relatório
+- Pendências em tempo real
+- Marcar pendência como tratada e reabrir
+- Passagem de Turno com relatórios recentes + pendências abertas
+- Layout responsivo
