@@ -1,4 +1,21 @@
-SISTEMA FADIGA - PAINEL DA GESTÃO - VERSÃO FINAL
-Substitua no repositório sistema-fadiga-gestao os arquivos index.html, app.js e style.css.
-Recursos: dashboard em tempo real, filtros, relatórios completos, ciência da gestão, pendências, exportação XLSX e impressão/PDF.
-IMPORTANTE: as regras atuais do Firestore já preveem create/update em ciencia_gestao para gestor/administrador.
+SISTEMA FADIGA - PAINEL DA GESTÃO V2.0
+
+Atualização gerencial preservando a integração Firebase existente.
+
+Principais melhorias:
+- Logo S2M Logística Fadiga no login, menu e favicon.
+- Dashboard com 6 KPIs, incluindo Aguardando Ciência.
+- Acompanhamento dos turnos A/B/C/D.
+- Área Atenção da Gestão para ocorrências, atenção, sistema instável/indisponível, condição crítica e pendências abertas.
+- Indicadores de ciência da gestão.
+- Indicadores do Sistema de Fadiga e Condições Operacionais.
+- Tendência diária de Atenções/Ocorrências.
+- Legendas explicativas nos filtros, KPIs e relatório completo.
+- Exportação de Resumo Gerencial para Excel.
+- Impressão/PDF do dashboard.
+- Melhorias de responsividade para celular.
+- Mantidas as coleções existentes: relatorios, pendencias e ciencia_gestao.
+- Nenhuma alteração necessária no App Fadiga V3.2 nem nas regras atuais do Firestore.
+
+PUBLICAÇÃO NO GITHUB PAGES:
+Substitua os arquivos do repositório sistema-fadiga-gestao pelos arquivos deste pacote e faça Commit changes.

@@ -1,36 +1,36 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gestão | Setor de Fadiga</title><link rel="stylesheet" href="style.css?v=20260918-0530">
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><style>.hidden{display:none!important}</style></head>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestão | Setor de Fadiga</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css?v=20260918-v2">
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><style>.hidden{display:none!important}</style>
+</head>
 <body>
-<div id="login" class="login"><div class="loginbox"><div class="brand">⛑ GESTÃO FADIGA</div><h1>Painel da Gestão</h1><p>Segurança do Trabalho • Setor de Fadiga</p>
-<input id="email" type="email" placeholder="E-mail do setor"><input id="senha" type="password" placeholder="Senha">
-<button id="entrar">Entrar</button><div id="loginMsg" class="msg"></div></div></div>
-
+<div id="login" class="login"><div class="loginbox"><img src="icon-192.png" class="loginLogo" alt="S2M Logística Fadiga"><div class="brand">GESTÃO FADIGA</div><h1>Painel da Gestão</h1><p>Segurança do Trabalho • Setor de Fadiga</p>
+<input id="email" type="email" placeholder="E-mail do setor"><input id="senha" type="password" placeholder="Senha"><button id="entrar">Entrar</button><div id="loginMsg" class="msg"></div></div></div>
 <div id="app" class="hidden">
-<aside><div class="logo">⛑ GESTÃO</div>
-<button class="nav on" data-page="dashboard">▣ Dashboard</button>
-<button class="nav" data-page="relatorios">▤ Relatórios</button>
-<button class="nav" data-page="pendencias">◷ Pendências</button>
+<aside><div class="logo"><img src="icon-192.png" alt="S2M"><span>GESTÃO</span></div>
+<button class="nav on" data-page="dashboard">▣ Dashboard <span id="navScience" class="navBadge hidden">0</span></button>
+<button class="nav" data-page="relatorios">▤ Relatórios</button><button class="nav" data-page="pendencias">◷ Pendências <span id="navPen" class="navBadge hidden">0</span></button>
 <div class="asideFoot">MAIS QUE MONITORAR,<br>É PROTEGER VIDAS.</div><button id="sair" class="nav">↪ Sair</button></aside>
-
-<main><header><div><b>SEGURANÇA DO TRABALHO</b><small>SETOR DE FADIGA • PAINEL DA GESTÃO</small></div><span id="userBadge">Gestão</span></header>
+<main><header><div><b>SEGURANÇA DO TRABALHO</b><small>SETOR DE FADIGA • PAINEL DA GESTÃO</small></div><div class="headerRight"><span id="lastUpdate">Aguardando sincronização...</span><span id="userBadge">Gestão</span></div></header>
 <section class="content">
 <div class="page active" id="page-dashboard">
-<div class="eyebrow">VISÃO GERENCIAL</div><h1>Dashboard do Setor de Fadiga</h1>
-<div class="filters"><label>De<input id="dIni" type="date"></label><label>Até<input id="dFim" type="date"></label><label>Turno<select id="fTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>Colaborador<select id="fResp"><option value="">Todos</option><option>Daniele</option><option>Carina</option><option>Natiély</option><option>Wanderson</option></select></label><button id="limpar">Limpar</button></div>
-<div class="kpis"><div><small>RELATÓRIOS</small><strong id="kRel">0</strong></div><div class="green"><small>NORMAIS</small><strong id="kNor">0</strong></div><div class="orange"><small>ATENÇÕES</small><strong id="kAte">0</strong></div><div class="red"><small>OCORRÊNCIAS</small><strong id="kOco">0</strong></div><div class="orange"><small>PENDÊNCIAS ABERTAS</small><strong id="kPen">0</strong></div></div>
-<div class="grid"><div class="card"><h2>Situação dos turnos</h2><div id="bars"></div></div><div class="card"><h2>Últimos relatórios</h2><div id="recentes"></div></div></div>
-<div class="card system-card"><h2>Condição do Sistema de Fadiga</h2><div id="systemStats"></div></div>
+<div class="eyebrow">VISÃO GERENCIAL</div><div class="titleRow"><div><h1>Dashboard do Setor de Fadiga</h1><p class="pageHelp">Acompanhe os relatórios, ocorrências, pendências, condições operacionais e ciências da gestão em tempo real.</p></div><div><button id="exportarResumo" class="topAction">Exportar resumo</button><button id="imprimirDash" class="topAction secondary">Imprimir / PDF</button></div></div>
+<div class="filters"><label>De<small>Início do período analisado.</small><input id="dIni" type="date"></label><label>Até<small>Fim do período analisado.</small><input id="dFim" type="date"></label><label>Turno<small>Filtra A, B, C ou D.</small><select id="fTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>Colaborador<small>Responsável pelo relatório.</small><select id="fResp"><option value="">Todos</option><option>Daniele</option><option>Carina</option><option>Natiély</option><option>Wanderson</option></select></label><button id="limpar">Limpar</button></div>
+<div class="kpis"><div><small>RELATÓRIOS</small><strong id="kRel">0</strong><em>Registros no período selecionado.</em></div><div class="green"><small>NORMAIS</small><strong id="kNor">0</strong><em>Turnos sem situação relevante.</em></div><div class="orange"><small>ATENÇÕES</small><strong id="kAte">0</strong><em>Turnos que exigiram acompanhamento.</em></div><div class="red"><small>OCORRÊNCIAS</small><strong id="kOco">0</strong><em>Ocorrências relevantes registradas.</em></div><div class="orange"><small>PENDÊNCIAS ABERTAS</small><strong id="kPen">0</strong><em>Itens ainda aguardando tratamento.</em></div><div class="blue"><small>AGUARDANDO CIÊNCIA</small><strong id="kSci">0</strong><em>Relatórios ainda não analisados pela gestão.</em></div></div>
+<div class="grid three"><div class="card"><h2>Situação dos relatórios</h2><p class="hint">Distribuição das situações no período filtrado.</p><div id="bars"></div></div><div class="card"><h2>Acompanhamento dos turnos</h2><p class="hint">Situação do relatório mais recente de cada turno no período.</p><div id="turnosStatus" class="turnosGrid"></div></div><div class="card"><h2>Ciência da Gestão</h2><p class="hint">Mostra o que já foi analisado e o que ainda aguarda ciência.</p><div id="scienceStats"></div></div></div>
+<div class="grid management"><div class="card attentionCard"><div class="cardTitleRow"><div><h2>Atenção da Gestão</h2><p class="hint">Somente registros que merecem acompanhamento gerencial.</p></div><span id="attentionCount" class="countPill">0</span></div><div id="attentionList"></div></div><div class="card"><h2>Últimos relatórios</h2><p class="hint">Acesso rápido aos registros mais recentes do filtro atual.</p><div id="recentes"></div></div></div>
+<div class="grid"><div class="card"><h2>Condição do Sistema de Fadiga</h2><p class="hint">Quantifica períodos Normal, Instável ou Indisponível informados nos relatórios.</p><div id="systemStats"></div></div><div class="card"><h2>Condições Operacionais</h2><p class="hint">Consolida as condições operacionais registradas pela equipe.</p><div id="operStats"></div></div></div>
+<div class="card trendCard"><h2>Tendência por dia</h2><p class="hint">Evolução dos relatórios com Atenção e Ocorrência nos últimos dias do período selecionado.</p><div id="trend"></div></div>
 </div>
-
-<div class="page" id="page-relatorios"><div class="eyebrow">CONSULTA E AUDITORIA</div><div class="titleRow"><h1>Relatórios</h1><div><button id="exportarExcel" class="topAction">Exportar Excel</button><button id="imprimirLista" class="topAction secondary">Imprimir</button></div></div>
-<div class="filters"><label>Data<input id="rData" type="date"></label><label>Turno<select id="rTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>Colaborador<select id="rResp"><option value="">Todos</option><option>Daniele</option><option>Carina</option><option>Natiély</option><option>Wanderson</option></select></label><label>Situação<select id="rSit"><option value="">Todas</option><option>NORMAL</option><option>ATENCAO</option><option>OCORRENCIA</option></select></label><label class="grow">Pesquisar<input id="rBusca" placeholder="CB-10, RPC, cinto..."></label></div><div id="listaRel"></div></div>
-
-<div class="page" id="page-pendencias"><div class="eyebrow">ACOMPANHAMENTO GERENCIAL</div><h1>Pendências</h1>
-<div class="filters"><label>Status<select id="pStatus"><option value="">Todas</option><option value="ABERTA">Abertas</option><option value="TRATADA">Tratadas</option></select></label><label>Turno<select id="pTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label class="grow">Pesquisar<input id="pBusca" placeholder="Pesquisar pendência..."></label></div><div id="listaPen"></div></div>
+<div class="page" id="page-relatorios"><div class="eyebrow">CONSULTA E AUDITORIA</div><div class="titleRow"><div><h1>Relatórios</h1><p class="pageHelp">Consulte o histórico completo, filtre informações, verifique a ciência da gestão e exporte os registros.</p></div><div><button id="exportarExcel" class="topAction">Exportar Excel</button><button id="imprimirLista" class="topAction secondary">Imprimir</button></div></div>
+<div class="filters"><label>Data<small>Data operacional do relatório.</small><input id="rData" type="date"></label><label>Turno<small>Turno responsável.</small><select id="rTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>Colaborador<small>Quem registrou o turno.</small><select id="rResp"><option value="">Todos</option><option>Daniele</option><option>Carina</option><option>Natiély</option><option>Wanderson</option></select></label><label>Situação<small>Classificação do turno.</small><select id="rSit"><option value="">Todas</option><option>NORMAL</option><option>ATENCAO</option><option>OCORRENCIA</option></select></label><label class="grow">Pesquisar<small>Procure termos em qualquer campo.</small><input id="rBusca" placeholder="CB-10, RPC, cinto..."></label></div><div id="listaRel"></div></div>
+<div class="page" id="page-pendencias"><div class="eyebrow">ACOMPANHAMENTO GERENCIAL</div><h1>Pendências</h1><p class="pageHelp">Acompanhe itens recebidos ou gerados entre turnos e registre a ciência da gestão quando necessário.</p>
+<div class="filters"><label>Status<small>Aberta ou tratada.</small><select id="pStatus"><option value="">Todas</option><option value="ABERTA">Abertas</option><option value="TRATADA">Tratadas</option></select></label><label>Turno<small>Turno de origem.</small><select id="pTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label class="grow">Pesquisar<small>Localize uma pendência pelo conteúdo.</small><input id="pBusca" placeholder="Pesquisar pendência..."></label></div><div id="listaPen"></div></div>
 </section></main></div>
-
 <div id="modal" class="modal hidden"><div class="modalbox"><button id="fechar">×</button><div id="modalBody"></div><div class="modalActions"><button id="btnCiencia" class="action greenBtn">✓ Dar ciência</button><button id="btnPrint" class="action">🖨 Imprimir / PDF</button></div></div></div>
-<script type="module" src="app.js?v=20260918-0530"></script></body></html>
+<script type="module" src="app.js?v=20260918-v2"></script></body></html>
