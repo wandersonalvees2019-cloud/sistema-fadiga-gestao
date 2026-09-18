@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestão | Setor de Fadiga</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="login" class="login"><div class="loginbox"><div class="brand">⛑ GESTÃO FADIGA</div><h1>Painel da Gestão</h1><p>Segurança do Trabalho • Setor de Fadiga</p>
+<input id="email" type="email" placeholder="E-mail do setor"><input id="senha" type="password" placeholder="Senha">
+<button id="entrar">Entrar</button><div id="loginMsg" class="msg"></div></div></div>
+<div id="app" class="hidden">
+<aside><div class="logo">⛑ GESTÃO</div>
+<button class="nav on" data-page="dashboard">▣ Dashboard</button>
+<button class="nav" data-page="relatorios">▤ Relatórios</button>
+<button class="nav" data-page="pendencias">◷ Pendências</button>
+<div class="asideFoot">MAIS QUE MONITORAR,<br>É PROTEGER VIDAS.</div><button id="sair" class="nav">↪ Sair</button></aside>
+<main><header><div><b>SEGURANÇA DO TRABALHO</b><small>SETOR DE FADIGA • PAINEL DA GESTÃO</small></div><span id="userBadge">Gestão</span></header>
+<section class="content">
+<div class="page active" id="page-dashboard">
+<div class="eyebrow">VISÃO GERENCIAL</div><h1>Dashboard do Setor de Fadiga</h1>
+<div class="filters"><label>De<input id="dIni" type="date"></label><label>Até<input id="dFim" type="date"></label><label>Turno<select id="fTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>Colaborador<select id="fResp"><option value="">Todos</option><option>Daniele</option><option>Carina</option><option>Natiély</option><option>Wanderson</option></select></label><button id="limpar">Limpar</button></div>
+<div class="kpis"><div><small>RELATÓRIOS</small><strong id="kRel">0</strong></div><div class="green"><small>NORMAIS</small><strong id="kNor">0</strong></div><div class="orange"><small>ATENÇÕES</small><strong id="kAte">0</strong></div><div class="red"><small>OCORRÊNCIAS</small><strong id="kOco">0</strong></div><div class="orange"><small>PENDÊNCIAS ABERTAS</small><strong id="kPen">0</strong></div></div>
+<div class="grid"><div class="card"><h2>Situação dos turnos</h2><div id="bars"></div></div><div class="card"><h2>Últimos relatórios</h2><div id="recentes"></div></div></div>
+</div>
+<div class="page" id="page-relatorios"><div class="eyebrow">CONSULTA</div><h1>Relatórios</h1>
+<div class="filters"><label>Data<input id="rData" type="date"></label><label>Turno<select id="rTurno"><option value="">Todos</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>Situação<select id="rSit"><option value="">Todas</option><option>NORMAL</option><option>ATENCAO</option><option>OCORRENCIA</option></select></label><label class="grow">Pesquisar<input id="rBusca" placeholder="CB-10, RPC, cinto..."></label></div><div id="listaRel"></div></div>
+<div class="page" id="page-pendencias"><div class="eyebrow">ACOMPANHAMENTO</div><h1>Pendências</h1><div class="filters"><label>Status<select id="pStatus"><option value="">Todas</option><option value="ABERTA">Abertas</option><option value="TRATADA">Tratadas</option></select></label><label class="grow">Pesquisar<input id="pBusca" placeholder="Pesquisar pendência..."></label></div><div id="listaPen"></div></div>
+</section></main></div>
+<div id="modal" class="modal hidden"><div class="modalbox"><button id="fechar">×</button><div id="modalBody"></div></div></div>
+<script type="module" src="app.js"></script></body></html>

@@ -1,0 +1,13 @@
+PAINEL DA GESTÃO - SETOR DE FADIGA
+
+Arquivos prontos para GitHub Pages.
+Usa o mesmo Firebase do App Operadores.
+
+Publicação:
+1. Crie um novo repositório: sistema-fadiga-gestao
+2. Envie index.html, style.css, app.js e LEIA-ME.txt
+3. Settings > Pages > Deploy from a branch > main > /(root)
+4. Firebase Authentication > Configurações > Domínios autorizados: o domínio github.io já autorizado atende este projeto.
+
+Acesso:
+O usuário autenticado precisa ter perfil 'gestor' ou 'administrador' e ativo=true em usuarios/{uid}.
