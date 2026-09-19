@@ -1,29 +1,11 @@
-SISTEMA FADIGA - PAINEL DA GESTÃO V2.0
+SISTEMA FADIGA - GESTÃO V2.3
 
-Atualização gerencial preservando a integração Firebase existente.
+Correção do fluxo de pendências:
+- Ciência da Gestão NÃO encerra pendência.
+- Status independentes: ABERTA, EM ACOMPANHAMENTO e TRATADA.
+- Gestão pode colocar em acompanhamento, marcar como tratada e reabrir.
+- Dashboard considera ABERTA + EM ACOMPANHAMENTO como pendências ativas.
+- Mantida responsividade da V2.2 e cache atualizado para v2.3.
+- Nenhum chat foi adicionado.
 
-Principais melhorias:
-- Logo S2M Logística Fadiga no login, menu e favicon.
-- Dashboard com 6 KPIs, incluindo Aguardando Ciência.
-- Acompanhamento dos turnos A/B/C/D.
-- Área Atenção da Gestão para ocorrências, atenção, sistema instável/indisponível, condição crítica e pendências abertas.
-- Indicadores de ciência da gestão.
-- Indicadores do Sistema de Fadiga e Condições Operacionais.
-- Tendência diária de Atenções/Ocorrências.
-- Legendas explicativas nos filtros, KPIs e relatório completo.
-- Exportação de Resumo Gerencial para Excel.
-- Impressão/PDF do dashboard.
-- Melhorias de responsividade para celular.
-- Mantidas as coleções existentes: relatorios, pendencias e ciencia_gestao.
-- Nenhuma alteração necessária no App Fadiga V3.2 nem nas regras atuais do Firestore.
-
-PUBLICAÇÃO NO GITHUB PAGES:
-Substitua os arquivos do repositório sistema-fadiga-gestao pelos arquivos deste pacote e faça Commit changes.
-
-ATUALIZACAO V2.1 - RESPONSIVIDADE AUTOMATICA
-- Layout fluido para computador, notebook, tablet e celular.
-- KPIs reorganizados automaticamente conforme a largura da tela.
-- Filtros passam de 4 colunas para 2 e depois 1 coluna.
-- Menu lateral se transforma em barra superior em tablet/celular.
-- Cards, graficos, botoes e modal se ajustam sem rolagem horizontal da pagina.
-- Mantida a mesma integracao Firebase e todas as funcoes da V2.0.
+Substitua os arquivos do repositório da Gestão no GitHub.

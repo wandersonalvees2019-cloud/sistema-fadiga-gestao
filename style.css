@@ -79,3 +79,6 @@ h1{font-size:clamp(24px,2.2vw,32px)}
   main header{align-items:flex-start}
   .headerRight{width:100%;align-items:flex-start;margin-left:0}
 }
+
+/* V2.3 - fluxo gerencial de pendências */
+.pendingActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.secondaryAction{background:#5b6f7d!important}.status-EM-ACOMPANHAMENTO{background:#fff1d6!important;color:#9a5a00!important}.status-TRATADA{background:#def4e7!important;color:#087a3d!important}.status-ABERTA{background:#fff0dc!important;color:#a85b00!important}@media(max-width:700px){.pendingActions .action{width:100%;margin:0}}
